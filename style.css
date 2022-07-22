@@ -298,15 +298,15 @@ video      {
 }
 .jumbotron.page-table .container {
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     width: 90%;
     margin-top: 20px;
     overflow: scroll;
 }
 .jumbotron.page-table .table {
     position: relative;
-    text-align: center;
     font-size: .85em;
+    margin: 0 auto;
 }
 .jumbotron.page-table table {
     white-space: nowrap;

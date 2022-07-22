@@ -51,11 +51,16 @@ if(!isset($_SESSION['read'])){ header('location: index.php'); }
                         ?>
                         <tr>
                             <td><?= $code ?></td>
-                            <td align='left'><?= $email ?></td>
-                            <td align='left'><?= $name ?></td>
+                            <td style="text-align:left"><?= $email ?></td>
+                            <td style="text-align:left"><?= $name ?></td>
                             <td><?= $status ?></td>
-                            <td><?= $payment_status ?></td>
-
+                            
+                            <?php if ($payment_status == 'paid') : ?>
+                                <td class="color-success"><?= $payment_status ?></td>
+                            <?php else : ?>
+                                <td><?= $payment_status ?></td>
+                            <?php endif ?>
+                                
                             <?php if ($payment != '') : ?>
                                 <td><a class="color-warning" href="<?= $payment ?>">Image</a></td>
                             <?php else : ?>
