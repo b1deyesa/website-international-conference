@@ -63,7 +63,7 @@
                             <td style="text-align:left"><?= $email ?></td>
                             <td style="text-align:left"><?= $name ?></td>
                             <td><?= $status ?></td>
-                            <td><?= $phone ?></td>
+                            <td class="color-light"><?= $phone ?></td>
 
                             <?php if ($article != '') : ?>
                                 <td><a class="link" href="<?= $article ?>" target="_blank">Link Download</a></td>
