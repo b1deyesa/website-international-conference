@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-$event_date = 'Friday, 1 March 2023';
+$event_date = 'Friday, 1 October 2023';
 $event_time = '12.00 PM';
 ?>
 <!DOCTYPE html>
@@ -101,7 +101,7 @@ $event_time = '12.00 PM';
           <?php } ?>
           <ul>
             <li>
-              <input type='text' name='code' id='code' placeholder='your access code' autocomplete='off' value='<?php if(isset($_SESSION['login-success'])) { echo $_SESSION['login-success'][2]; } ?>' required>
+              <input type='text' name='code' id='code' placeholder='your access code' autocomplete='off' value='<?php if(isset($_SESSION['login-success'])) { echo $_SESSION['login-success'][2]; } ?><?php if(isset($_SESSION['code'])) { echo $_SESSION['code']; } ?>' required>
               <label for='code'>Access Code</label>
             </li>
             <li>

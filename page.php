@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION['login-success'])) {
-  header('location: index.php');
-}
+session_start(); if (!isset($_SESSION['login-success'])) { header('location: index.php'); }
 $dataLogin = $_SESSION['login-success'];
 // Add data here -------------------------------
 $time_add       = $dataLogin[0];
@@ -97,12 +94,10 @@ $article        = $dataLogin[10];
           <!-- Article -->
           <li id='textarea'>
             <?php if ($article != '') : ?>
-              <a id="article-name" class="article-link color-warning" href="<?= $article ?>" target="_blank">Check Your Article</a>
-            <?php else : ?>
-              <a id="article-name" class="article-link color-light">Add your file</a>
+              <a id="article-name" class="article-link" href="<?= $article ?>" target="_blank">Download Abstract</a>
             <?php endif ?>
             <input type='file' name='article' id='article' value=''>
-            <label for='article'>Article</label>
+            <label for='article'>Abstract</label>
           </li>
           <!-- Button -->
           <li id='textarea'>
@@ -120,7 +115,12 @@ $article        = $dataLogin[10];
           document.getElementById('btn-update').classList.remove('bg-light')
         }
         document.getElementById('payment').onchange = (e) => { const [file] = e.target.files; document.getElementById('payment-name').innerHTML = ' : ' + '<span class=color-warning>' + file.name + '</span>' }
-        document.getElementById('article').onchange = (e) => { const [file] = e.target.files; document.getElementById('article-name').innerHTML = '<span class=color-light>' + file.name + '</span>' }
+        document.getElementById('article').onchange = (e) => { 
+          const [file] = e.target.files; 
+          document.getElementById('article-name').innerHTML = '<span class=color-light>' + file.name + '</span>' 
+          document.getElementById('article-name').href = '' 
+          document.getElementById('article-name').target = '' 
+        }
       </script>
     </div>
   </section>

@@ -27,7 +27,7 @@ function logout() {
   header('location: index.php');
 }
 function login() {
-  if(strtoupper($_POST['code']) == '#IC22FPIK19') { read(); die; }
+  if(strtoupper($_POST['code']) == '#IC22FPIK19') { $_SESSION['code'] = $_POST['code']; read(); die; }
   $postData = [
     'action' => 'login',
     'code' => strtoupper($_POST['code']),
