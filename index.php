@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-$event_date = 'Friday, 1 October 2023';
+$event_date = 'Friday, 2 October 2023';
 $event_time = '12.00 PM';
 ?>
 <!DOCTYPE html>
